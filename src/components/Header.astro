@@ -1,29 +1,31 @@
 ---
-// Header.astro - Global Navigation Bar
+// Header.astro - Global Navigation Bar (Cozy Redesign)
 ---
 
 <header class="main-header glass">
   <div class="header-container">
     <a href="/" class="logo">
-      <!-- Embed the SVG Logo inline for animations and styling flexibility -->
+      <!-- Gem Pixel Logo SVG -->
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="logo-icon">
         <defs>
-          <linearGradient id="header-logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#00ffff" />
-            <stop offset="100%" stop-color="#b545ff" />
+          <linearGradient id="header-gem-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FF6B9B" />
+            <stop offset="50%" stop-color="#FF8E53" />
+            <stop offset="100%" stop-color="#4ECAFF" />
           </linearGradient>
         </defs>
-        <polygon points="50,8 88,30 88,70 50,92 12,70 12,30" stroke="url(#header-logo-grad)" stroke-width="4" stroke-linejoin="round" fill="none"/>
-        <path d="M38,30 L38,70 L62,70" stroke="url(#header-logo-grad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M38,30 L58,30" stroke="url(#header-logo-grad)" stroke-width="6" stroke-linecap="round"/>
-        <path d="M38,48 L54,48" stroke="url(#header-logo-grad)" stroke-width="6" stroke-linecap="round"/>
+        <polygon points="50,15 80,45 50,85 20,45" fill="url(#header-gem-grad)" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round"/>
+        <polyline points="50,15 50,85" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.4"/>
+        <polyline points="20,45 80,45" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.4"/>
+        <polygon points="50,30 65,45 50,65 35,45" fill="#FFFFFF" fill-opacity="0.4"/>
+        <path d="M72,20 L75,24 L79,25 L75,26 L72,30 L71,26 L67,25 L71,24 Z" fill="#FFFFFF"/>
       </svg>
       <span class="logo-text">LOEF<span class="text-gradient">STUDIO</span></span>
     </a>
 
     <nav class="nav-menu" id="navMenu">
       <a href="#hero" class="nav-link">Home</a>
-      <a href="#games" class="nav-link">Games</a>
+      <a href="#features" class="nav-link">Features</a>
       <a href="#about" class="nav-link">About</a>
       <a href="#careers" class="nav-link">Careers</a>
       <a href="#contact" class="btn-primary btn-sm">Contact Us</a>
@@ -49,21 +51,24 @@
     border-left: none;
     border-right: none;
     border-bottom: 1px solid var(--border-light);
+    background: rgba(253, 251, 247, 0.7); /* Cream semi-transparent */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     transition: var(--transition-normal);
   }
 
-  /* Shrinking header effect via class added by JS */
+  /* Shrinking header effect */
   .main-header.scrolled {
-    padding: 0.5rem 0;
-    background: hsla(var(--bg-dark), 0.9);
-    border-bottom: 1px solid var(--border-neon);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    padding: 0.25rem 0;
+    background: rgba(253, 251, 247, 0.95);
+    border-bottom: 1px solid rgba(255, 94, 145, 0.2);
+    box-shadow: 0 4px 20px rgba(180, 160, 140, 0.08);
   }
 
   .header-container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 1.2rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -73,42 +78,42 @@
   .logo {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.6rem;
     text-decoration: none;
     color: hsl(var(--text-primary));
   }
 
   .logo-icon {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     transition: var(--transition-normal);
+    filter: drop-shadow(0 2px 5px rgba(255, 107, 155, 0.2));
   }
 
   .logo:hover .logo-icon {
-    transform: rotate(6deg) scale(1.1);
-    filter: drop-shadow(var(--shadow-neon-cyan));
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 4px 10px rgba(255, 107, 155, 0.4));
   }
 
   .logo-text {
-    font-family: 'Outfit', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 900;
-    letter-spacing: 0.05em;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
   }
 
   .nav-menu {
     display: flex;
     align-items: center;
-    gap: 2.5rem;
+    gap: 2.2rem;
   }
 
   .nav-link {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Fredoka', sans-serif;
     font-size: 0.95rem;
-    font-weight: 600;
+    font-weight: 500;
     text-decoration: none;
     color: hsl(var(--text-secondary));
-    letter-spacing: 0.03em;
     transition: var(--transition-fast);
     position: relative;
     padding: 0.25rem 0;
@@ -117,26 +122,28 @@
   .nav-link::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 0;
-    height: 2px;
-    background: var(--gradient-neon);
+    height: 3px;
+    background: hsl(var(--accent-pink));
+    border-radius: 2px;
     transition: var(--transition-fast);
   }
 
   .nav-link:hover {
-    color: hsl(var(--text-primary));
+    color: hsl(var(--accent-pink));
   }
 
   .nav-link:hover::after {
-    width: 100%;
+    width: 20px;
   }
 
   /* Custom small button for header */
   .btn-sm {
-    padding: 0.5rem 1.25rem;
-    font-size: 0.85rem;
+    padding: 0.5rem 1.4rem;
+    font-size: 0.9rem;
   }
 
   /* Mobile Hamburguer Toggle */
@@ -144,8 +151,8 @@
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    width: 24px;
-    height: 18px;
+    width: 22px;
+    height: 16px;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -175,11 +182,11 @@
       left: 0;
       width: 100%;
       height: 100vh;
-      background-color: hsla(var(--bg-dark), 0.98);
-      backdrop-filter: blur(var(--glass-blur));
+      background-color: rgba(253, 251, 247, 0.98);
+      backdrop-filter: blur(20px);
       flex-direction: column;
       justify-content: center;
-      gap: 3rem;
+      gap: 2.5rem;
       transition: top 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
       z-index: 999;
     }
@@ -189,18 +196,18 @@
     }
 
     .nav-link {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
     }
 
     /* Transform burger menu to 'X' when active */
     .mobile-toggle.active .bar:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
+      transform: translateY(7px) rotate(45deg);
     }
     .mobile-toggle.active .bar:nth-child(2) {
       opacity: 0;
     }
     .mobile-toggle.active .bar:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
+      transform: translateY(-7px) rotate(-45deg);
     }
   }
 </style>

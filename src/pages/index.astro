@@ -1,53 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-import GameCard from '../components/GameCard.astro';
 import Footer from '../components/Footer.astro';
 
-// Game data
-const featuredGames = [
-  {
-    title: "Project Elysium",
-    genre: "Openworld Action RPG",
-    image: "/images/project-elysium.png",
-    description: "네온으로 빛나는 디스토피아 미래 도시를 배경으로 펼쳐지는 오픈월드 사이버펑크 RPG. 강력한 메카 슈트를 조종해 도시를 배후에서 조종하는 거대 기업의 음모를 파헤치세요.",
-    platforms: ["Steam", "PS5", "Xbox Series X"],
-    status: "In Development",
-    link: "#"
-  },
-  {
-    title: "Project Abyss",
-    genre: "Dark Fantasy Soulslike",
-    image: "/images/project-abyss.png",
-    description: "멸망해가는 고대 신들의 성지를 무대로 한 극한의 난이도를 자랑하는 소울라이크 액션 RPG. 불사의 기사가 되어 타락한 고대의 수호신들을 봉인하고 질서를 찾으세요.",
-    platforms: ["Steam", "PS5"],
-    status: "Released",
-    link: "#"
-  }
-];
-
-// Careers data
+// Careers data - Casual/Healing Studio Style
 const openPositions = [
   {
-    title: "Game Client Programmer",
-    department: "R&D Dev Team",
+    title: "iOS Game Developer (Unity / Swift)",
+    department: "Client Dev Team",
     type: "Full-Time",
-    experience: "3+ years / Senior",
-    techs: ["C++", "Unreal Engine 5", "PhysX"]
+    experience: "신입 ~ 경력 5년 이하",
+    techs: ["Unity", "C#", "Swift", "iOS Optimization"]
   },
   {
-    title: "Technical Artist (TA)",
+    title: "2D Pixel / UI Designer",
     department: "Art Team",
     type: "Full-Time",
-    experience: "5+ years / Lead",
-    techs: ["HLSL/GLSL", "Houdini", "UE5 Materials"]
-  },
-  {
-    title: "3D Environment Artist",
-    department: "Art Team",
-    type: "Full-Time",
-    experience: "Junior / Mid-level",
-    techs: ["3ds Max / Maya", "Substance Painter", "ZBrush"]
+    experience: "신입 / 경력 무관",
+    techs: ["Pixel Art", "Figma / Photoshop", "Casual Game UI"]
   }
 ];
 ---
@@ -57,41 +27,58 @@ const openPositions = [
 
   <!-- Hero Section -->
   <section id="hero" class="hero-section">
-    <div class="hero-bg-overlay"></div>
-    <div class="container hero-content fade-in">
-      <span class="hero-badge">PREMIUM INDIE GAME STUDIO</span>
-      <h1 class="hero-title">WE SHAPE THE<br><span class="text-gradient">NEXT REALITY</span></h1>
-      <p class="hero-desc">
-        LOEF Studio는 한계를 극복하고 상상 이상의 세계를 게임으로 구현해내는 독립 게임 개발 스튜디오입니다. 독창적인 플레이와 압도적인 아트워크로 잊지 못할 여정을 선물합니다.
-      </p>
-      <div class="hero-actions">
-        <a href="#games" class="btn-primary">Explore Games</a>
-        <a href="#about" class="btn-secondary">Learn More</a>
+    <div class="hero-bg-sparkles"></div>
+    <div class="container hero-grid fade-in">
+      <div class="hero-text-panel">
+        <span class="hero-badge">Sparkling Puzzle Game</span>
+        <h1 class="hero-title">다이아몬드<br><span class="text-gradient">닷 아트</span></h1>
+        <p class="hero-desc">
+          일상에 소박한 반짝임과 편안한 휴식을 더해보세요. 콕콕 터치하며 완성해 나가는 나만의 보석 픽셀 아트! 귀여운 동물 도안부터 반짝이는 힐링 보석 공예를 이제 아이폰에서 곧 만나실 수 있습니다.
+        </p>
+        
+        <div class="hero-actions">
+          <div class="coming-soon-badge">
+            <span class="pulse-dot"></span> Coming Soon on App Store
+          </div>
+        </div>
+      </div>
+      
+      <div class="hero-image-panel">
+        <div class="device-mockup">
+          <img src="/images/diamond-game-preview.png" alt="Diamond Dot Art game preview on iPhone" class="preview-img" />
+          <div class="glow-effect"></div>
+        </div>
       </div>
     </div>
-    
-    <!-- Animated scroll indicator -->
-    <a href="#games" class="scroll-indicator" aria-label="Scroll down to games">
-      <span class="mouse">
-        <span class="wheel"></span>
-      </span>
-      <span class="arrow"></span>
-    </a>
   </section>
 
-  <!-- Games Section -->
-  <section id="games" class="games-section reveal-section">
+  <!-- Features Section -->
+  <section id="features" class="features-section reveal-section">
     <div class="container">
       <div class="section-header">
-        <span class="subtitle">OUR PORTFOLIO</span>
-        <h2 class="section-title">FEATURED <span class="text-gradient">PROJECTS</span></h2>
+        <span class="subtitle">GAME FEATURES</span>
+        <h2 class="section-title">반짝이는 힐링의 <span class="text-gradient">순간들</span></h2>
         <div class="section-line"></div>
       </div>
       
-      <div class="games-grid">
-        {featuredGames.map(game => (
-          <GameCard {...game} />
-        ))}
+      <div class="features-grid">
+        <div class="cozy-card feature-card">
+          <div class="feature-icon pink">💎</div>
+          <h3>화사한 다이아몬드 비즈</h3>
+          <p>빛을 받으면 다채롭게 반짝이는 크리스탈 보석 비즈 공예의 감성을 폰 화면 그대로 담았습니다.</p>
+        </div>
+        
+        <div class="cozy-card feature-card">
+          <div class="feature-icon blue">🎧</div>
+          <h3>마음을 차분하게 만드는 ASMR</h3>
+          <p>보석 비즈를 한 땀 한 땀 놓을 때 들려오는 감미로운 효과음과 섬세한 진동 피드백이 하루의 스트레스를 지워줍니다.</p>
+        </div>
+        
+        <div class="cozy-card feature-card">
+          <div class="feature-icon yellow">🎨</div>
+          <h3>귀엽고 다양한 무료 도안</h3>
+          <p>말랑한 강아지, 귀여운 아기 고양이 픽셀 아트부터 정교하고 아름다운 일러스트까지 무제한 도안이 준비되어 있습니다.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -99,42 +86,32 @@ const openPositions = [
   <!-- About Section -->
   <section id="about" class="about-section reveal-section">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-info">
-          <span class="subtitle">WHO WE ARE</span>
-          <h2 class="section-title">BEYOND <span class="text-gradient">PLAY</span></h2>
-          <div class="section-line left"></div>
+      <div class="about-card glass">
+        <div class="about-content">
+          <span class="subtitle">ABOUT THE STUDIO</span>
+          <h2 class="section-title">작은 반짝임이 주는 <span class="text-gradient">행복</span></h2>
           <p class="about-desc">
-            LOEF Studio는 2026년에 설립되어, 타협하지 않는 독창성과 최고 수준의 비주얼, 깊이 있는 스토리텔링을 바탕으로 프리미엄 인디 게임을 개발하고 있습니다. 
+            LOEF Studio는 지친 현대인들의 일상에 작은 쉼표와 따뜻한 여유를 선사하는 캐주얼 모바일 퍼즐 게임을 제작하고 있습니다. 
           </p>
           <p class="about-desc">
-            우리는 게임이 단순한 오락적 가치를 넘어 플레이어의 감정을 흔들고 오래 기억에 남는 예술적 경험이 될 수 있다고 믿으며, 모든 개발 단계에서 완벽함을 지향합니다.
+            우리는 복잡한 경쟁이나 스트레스를 주는 요소들을 과감히 배제합니다. 잠들기 전 침대 위에서, 혹은 짧은 휴식 시간 동안 온전히 나만의 페이스로 편안하게 즐기며 힐링할 수 있는 따뜻한 웰메이드 게임을 지향합니다.
           </p>
         </div>
-        
-        <div class="about-values">
-          <div class="value-card glass">
-            <div class="value-icon cyan">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
-            </div>
-            <h3>Unlimited Creativity</h3>
-            <p>기존 장르의 한계에 안주하지 않고, 독창적이고 새로운 게임 메커닉을 지속적으로 설계합니다.</p>
-          </div>
-          
-          <div class="value-card glass">
-            <div class="value-icon purple">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20M12 2v20M20 20L4 4"/></svg>
-            </div>
-            <h3>Visual Masterpiece</h3>
-            <p>차세대 엔진 활용 역량과 고유의 비주얼 정체성을 조화시켜 한 편의 애니메이션 같은 그래픽을 만듭니다.</p>
-          </div>
-          
-          <div class="value-card glass">
-            <div class="value-icon pink">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <h3>Community Centered</h3>
-            <p>언제나 커뮤니티의 목소리에 경청하며 플레이어들과 긴밀하게 호흡하며 최선의 빌드를 업그레이드합니다.</p>
+        <div class="about-brand-visual">
+          <div class="brand-box">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="brand-logo-svg">
+              <defs>
+                <linearGradient id="about-gem-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FF6B9B" />
+                  <stop offset="100%" stop-color="#4ECAFF" />
+                </linearGradient>
+              </defs>
+              <polygon points="50,15 80,45 50,85 20,45" fill="url(#about-gem-grad)" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round"/>
+              <polyline points="50,15 50,85" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.4"/>
+              <polyline points="20,45 80,45" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.4"/>
+              <path d="M72,20 L75,24 L79,25 L75,26 L72,30 L71,26 L67,25 L71,24 Z" fill="#FFFFFF"/>
+            </svg>
+            <span class="brand-text">LOEF Studio</span>
           </div>
         </div>
       </div>
@@ -146,16 +123,16 @@ const openPositions = [
     <div class="container">
       <div class="section-header">
         <span class="subtitle">WE ARE HIRING</span>
-        <h2 class="section-title">JOIN THE <span class="text-gradient">CREW</span></h2>
+        <h2 class="section-title">함께 행복을 만들 <span class="text-gradient">가족을 모십니다</span></h2>
         <div class="section-line"></div>
         <p class="section-desc">
-          LOEF Studio에서 자유롭게 도전하고, 영감을 주고받으며 세계 시장을 타겟으로 혁신적인 모험을 함께 설계할 유능한 전우들을 환영합니다.
+          자유롭고 유연한 환경 속에서, 전 세계 유저들에게 작은 위로를 건넬 아기자기한 모바일 퍼즐 게임을 함께 만들어갈 멤버를 환영합니다.
         </p>
       </div>
 
       <div class="positions-list">
         {openPositions.map(pos => (
-          <div class="position-item glass">
+          <div class="cozy-card position-item">
             <div class="position-header">
               <div class="position-title-group">
                 <span class="position-dept">{pos.department}</span>
@@ -172,7 +149,7 @@ const openPositions = [
                   <span class="tech-tag">{tech}</span>
                 ))}
               </div>
-              <a href="mailto:recruit@loefstudio.com" class="btn-apply btn-secondary">Apply Now</a>
+              <a href="mailto:recruit@loefstudio.com" class="btn-apply btn-secondary">지원하기</a>
             </div>
           </div>
         ))}
@@ -182,25 +159,25 @@ const openPositions = [
 
   <!-- Contact Section -->
   <section id="contact" class="contact-section reveal-section">
-    <div class="container contact-container glass">
+    <div class="container contact-container cozy-card">
       <div class="contact-info-panel">
         <span class="subtitle">GET IN TOUCH</span>
-        <h2 class="section-title">START A <span class="text-gradient">NEW MISSION</span></h2>
+        <h2 class="section-title">따뜻한 소통을 <span class="text-gradient">기다립니다</span></h2>
         <p class="contact-text">
-          프로젝트 제안, 퍼블리싱 논의, 언론 취재 등 다양한 비즈니스 협업을 환영합니다. 아래 폼을 작성해 주시거나 메일로 바로 문의해 주세요.
+          프로젝트 제휴 및 제안, 기타 문의사항이 있으시면 언제든지 편하게 아래 이메일이나 양식을 활용해 남겨주세요.
         </p>
         <div class="contact-details">
           <div class="detail-item">
             <span class="icon">📧</span>
             <div>
-              <h4>General Inquiry</h4>
+              <h4>대표 메일</h4>
               <p>contact@loefstudio.com</p>
             </div>
           </div>
           <div class="detail-item">
             <span class="icon">📍</span>
             <div>
-              <h4>Studio Location</h4>
+              <h4>스튜디오 위치</h4>
               <p>Seoul, Republic of Korea</p>
             </div>
           </div>
@@ -209,18 +186,18 @@ const openPositions = [
       
       <form class="contact-form" id="contactForm">
         <div class="form-group">
-          <label for="name">이름 / 회사명</label>
-          <input type="text" id="name" required placeholder="성함 혹은 사명을 적어주세요." />
+          <label for="name">성함 / 제휴사명</label>
+          <input type="text" id="name" required placeholder="성함 혹은 사명을 입력해 주세요." />
         </div>
         <div class="form-group">
           <label for="email">이메일 주소</label>
-          <input type="email" id="email" required placeholder="답변받으실 이메일을 입력하세요." />
+          <input type="email" id="email" required placeholder="답변을 받아보실 이메일 주소입니다." />
         </div>
         <div class="form-group">
-          <label for="message">문의 메시지</label>
-          <textarea id="message" rows="5" required placeholder="상세한 문의 내용을 남겨주시면 빠르게 검토 후 회신 드리겠습니다."></textarea>
+          <label for="message">문의 사항</label>
+          <textarea id="message" rows="5" required placeholder="상세한 내용을 입력해주시면 빠르게 검토 후 회신 드리겠습니다."></textarea>
         </div>
-        <button type="submit" class="btn-primary form-submit">Send Message</button>
+        <button type="submit" class="btn-primary form-submit">문의 메일 발송하기</button>
       </form>
     </div>
   </section>
@@ -229,268 +206,295 @@ const openPositions = [
 </Layout>
 
 <style>
-  /* Hero Section Styling */
+  /* Hero Section Styling - Cozy Clean Light */
   .hero-section {
     position: relative;
-    height: 100vh;
-    min-height: 700px;
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-image: url('/images/hero-bg.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding-top: 80px;
+    background: radial-gradient(circle at 10% 20%, rgba(255, 107, 155, 0.06) 0%, rgba(78, 202, 255, 0.05) 50%, hsl(var(--bg-cream)) 100%);
+    padding-top: 100px;
+    padding-bottom: 50px;
+    overflow: hidden;
   }
 
-  .hero-bg-overlay {
+  .hero-bg-sparkles {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at center, rgba(12, 13, 18, 0.4) 0%, hsl(var(--bg-dark)) 85%);
-    z-index: 1;
+    background-image: radial-gradient(hsla(var(--accent-yellow), 0.3) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    opacity: 0.5;
   }
 
-  .hero-content {
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: center;
     position: relative;
     z-index: 2;
-    text-align: center;
-    max-width: 800px;
+  }
+
+  .hero-text-panel {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 1.5rem;
   }
 
   .hero-badge {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 700;
-    letter-spacing: 0.2em;
-    color: hsl(var(--neon-cyan));
-    text-shadow: var(--shadow-neon-cyan);
-    text-transform: uppercase;
+    padding: 0.35rem 1rem;
+    background-color: hsla(var(--accent-pink), 0.1);
+    color: hsl(var(--accent-pink));
+    border-radius: 20px;
+    font-family: 'Fredoka', sans-serif;
   }
 
   .hero-title {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 900;
-    line-height: 1.1;
+    font-size: clamp(2.5rem, 6vw, 4.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: hsl(var(--text-primary));
   }
 
   .hero-desc {
     font-size: clamp(1rem, 2vw, 1.15rem);
-    line-height: 1.7;
-    max-width: 650px;
-    text-align: center;
+    line-height: 1.8;
+    color: hsl(var(--text-secondary));
   }
 
   .hero-actions {
-    display: flex;
-    gap: 1.5rem;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
   }
 
-  /* Animated Scroll Indicator */
-  .scroll-indicator {
-    position: absolute;
-    bottom: 2.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
+  .coming-soon-badge {
+    display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    z-index: 2;
-    opacity: 0.7;
-    transition: opacity var(--transition-fast);
+    gap: 0.6rem;
+    padding: 0.75rem 1.6rem;
+    background-color: hsl(var(--bg-card));
+    border: 1px solid var(--border-light);
+    border-radius: 30px;
+    color: hsl(var(--text-secondary));
+    font-family: 'Fredoka', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    box-shadow: var(--shadow-soft);
   }
 
-  .scroll-indicator:hover {
-    opacity: 1;
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: hsl(var(--accent-pink));
+    border-radius: 50%;
+    animation: pulse 1.8s infinite;
   }
 
-  .mouse {
-    width: 26px;
-    height: 42px;
-    border: 2px solid hsl(var(--text-primary));
-    border-radius: 20px;
+  @keyframes pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 107, 155, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(255, 107, 155, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 107, 155, 0); }
+  }
+
+  /* Mockup Layout */
+  .hero-image-panel {
     display: flex;
     justify-content: center;
-    padding-top: 6px;
+    position: relative;
   }
 
-  .wheel {
-    width: 4px;
-    height: 8px;
-    background-color: hsl(var(--neon-cyan));
-    border-radius: 2px;
-    animation: scrollWheel 2s infinite;
-    box-shadow: var(--shadow-neon-cyan);
+  .device-mockup {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    border-radius: 40px;
+    padding: 8px;
+    background: #ffffff;
+    box-shadow: 0 20px 50px rgba(180, 160, 140, 0.25);
+    border: 1px solid var(--border-light);
+    transform: rotate(2deg);
+    transition: var(--transition-normal);
   }
 
-  @keyframes scrollWheel {
-    0% { transform: translateY(0); opacity: 1; }
-    50% { transform: translateY(8px); opacity: 0.3; }
-    100% { transform: translateY(0); opacity: 1; }
+  .device-mockup:hover {
+    transform: rotate(0deg) scale(1.03);
   }
 
-  /* Sections Common Headers */
+  .preview-img {
+    width: 100%;
+    height: auto;
+    border-radius: 32px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .glow-effect {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(255, 94, 145, 0.15) 0%, transparent 60%);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  /* Sections Header */
   .section-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3.5rem;
   }
 
   .subtitle {
-    font-size: 0.8rem;
-    font-weight: 800;
-    color: hsl(var(--neon-purple));
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: hsl(var(--accent-pink));
+    letter-spacing: 0.05em;
     display: block;
     margin-bottom: 0.5rem;
+    font-family: 'Fredoka', sans-serif;
   }
 
   .section-title {
-    font-size: clamp(2rem, 4vw, 2.75rem);
-    font-weight: 900;
-    margin-bottom: 1rem;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 0.8rem;
   }
 
   .section-line {
-    width: 60px;
+    width: 45px;
     height: 4px;
-    background: var(--gradient-neon);
+    background: var(--gradient-jewel);
     margin: 0 auto;
     border-radius: 2px;
   }
 
   .section-line.left {
-    margin: 0 0 1.5rem 0;
+    margin: 0 0 1.2rem 0;
   }
 
   .section-desc {
-    max-width: 600px;
-    margin: 1.5rem auto 0 auto;
+    max-width: 580px;
+    margin: 1.2rem auto 0 auto;
     color: hsl(var(--text-secondary));
+    font-size: 0.98rem;
   }
 
-  /* Games Section */
-  .games-section {
-    padding: 8rem 0;
+  /* Features Section */
+  .features-section {
+    padding: 6rem 0;
   }
 
-  .games-grid {
+  .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.2rem;
   }
 
-  @media (max-width: 768px) {
-    .games-grid {
-      grid-template-columns: 1fr;
-    }
+  .feature-card {
+    padding: 2.5rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .feature-icon {
+    font-size: 2.2rem;
+    width: 64px;
+    height: 64px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .feature-icon.pink { background-color: hsla(var(--accent-pink), 0.08); }
+  .feature-icon.blue { background-color: hsla(var(--accent-blue), 0.08); }
+  .feature-icon.yellow { background-color: hsla(var(--accent-yellow), 0.08); }
+
+  .feature-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .feature-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 
   /* About Section */
   .about-section {
-    padding: 8rem 0;
-    background-color: hsl(240, 15%, 5%);
+    padding: 6rem 0;
+    background-color: hsl(36, 40%, 96%); /* Muted warm background */
     border-top: 1px solid var(--border-light);
     border-bottom: 1px solid var(--border-light);
   }
 
-  .about-grid {
+  .about-card {
+    padding: 3.5rem;
     display: grid;
-    grid-template-columns: 1.2fr 1.8fr;
-    gap: 5rem;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 4rem;
     align-items: center;
+    background: hsl(var(--bg-card));
   }
 
-  .about-info {
+  .about-content {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1.2rem;
   }
 
   .about-desc {
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.8;
   }
 
-  .about-values {
+  .about-brand-visual {
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .value-card {
-    padding: 2rem;
-    display: grid;
-    grid-template-columns: 50px 1fr;
-    gap: 1.5rem;
-    align-items: flex-start;
-    transition: transform var(--transition-fast);
-  }
-
-  .value-card:hover {
-    transform: translateX(6px);
-  }
-
-  .value-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
     justify-content: center;
   }
 
-  .value-icon.cyan {
-    background-color: hsla(180, 100%, 50%, 0.1);
-    color: hsl(var(--neon-cyan));
-    border: 1px solid rgba(0, 255, 255, 0.2);
+  .brand-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 2rem;
+    border: 2px dashed rgba(255, 94, 145, 0.25);
+    border-radius: var(--radius-lg);
+    background-color: hsla(var(--bg-cream), 0.5);
   }
 
-  .value-icon.purple {
-    background-color: hsla(280, 100%, 65%, 0.1);
-    color: hsl(var(--neon-purple));
-    border: 1px solid rgba(181, 69, 255, 0.2);
+  .brand-logo-svg {
+    width: 64px;
+    height: 64px;
+    filter: drop-shadow(0 4px 10px rgba(255, 107, 155, 0.25));
   }
 
-  .value-icon.pink {
-    background-color: hsla(325, 100%, 60%, 0.1);
-    color: hsl(var(--neon-pink));
-    border: 1px solid rgba(255, 51, 153, 0.2);
-  }
-
-  .value-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .value-card p {
-    font-size: 0.9rem;
-    color: hsl(var(--text-secondary));
-  }
-
-  @media (max-width: 992px) {
-    .about-grid {
-      grid-template-columns: 1fr;
-      gap: 3.5rem;
-    }
+  .brand-text {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: hsl(var(--text-primary));
   }
 
   /* Careers Section */
   .careers-section {
-    padding: 8rem 0;
+    padding: 6rem 0;
   }
 
   .positions-list {
-    max-width: 800px;
+    max-width: 750px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -499,36 +503,28 @@ const openPositions = [
 
   .position-item {
     padding: 2rem;
-    transition: var(--transition-fast);
-  }
-
-  .position-item:hover {
-    border-color: hsl(var(--neon-purple));
-    box-shadow: var(--shadow-neon-purple);
   }
 
   .position-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
     flex-wrap: wrap;
     gap: 1rem;
   }
 
   .position-dept {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 700;
-    color: hsl(var(--neon-cyan));
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    color: hsl(var(--accent-pink));
     display: block;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.2rem;
+    font-family: 'Fredoka', sans-serif;
   }
 
   .position-title {
-    font-size: 1.35rem;
-    font-weight: 800;
+    font-size: 1.3rem;
   }
 
   .position-meta {
@@ -540,8 +536,8 @@ const openPositions = [
     font-size: 0.75rem;
     font-weight: 600;
     padding: 0.25rem 0.65rem;
-    border-radius: 4px;
-    background-color: hsla(240, 10%, 15%, 0.6);
+    border-radius: 20px;
+    background-color: hsla(240, 10%, 15%, 0.04);
     border: 1px solid var(--border-light);
     color: hsl(var(--text-secondary));
   }
@@ -551,89 +547,91 @@ const openPositions = [
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid var(--border-light);
-    padding-top: 1.25rem;
+    padding-top: 1.2rem;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 1.2rem;
   }
 
   .tech-tags {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.4rem;
     flex-wrap: wrap;
   }
 
   .tech-tag {
     font-size: 0.75rem;
-    padding: 0.15rem 0.5rem;
-    background: hsla(280, 100%, 65%, 0.05);
-    border: 1px solid rgba(181, 69, 255, 0.15);
-    color: hsl(var(--neon-purple));
-    border-radius: 3px;
+    padding: 0.2rem 0.6rem;
+    background: hsla(200, 95%, 65%, 0.08);
+    border: 1px solid rgba(94, 199, 255, 0.2);
+    color: hsl(var(--accent-blue));
+    border-radius: 4px;
     font-weight: 600;
   }
 
   .btn-apply {
-    padding: 0.5rem 1.5rem;
-    font-size: 0.8rem;
-    border-radius: 4px;
-    text-transform: uppercase;
-    font-weight: 700;
+    padding: 0.5rem 1.6rem;
+    font-size: 0.9rem;
+    border-radius: 30px;
+    font-weight: 600;
     text-decoration: none;
+    box-shadow: none;
   }
 
   /* Contact Section */
   .contact-section {
-    padding: 8rem 0;
-    background-color: hsl(240, 15%, 4%);
+    padding: 6rem 0;
+    background-color: hsl(36, 40%, 98%);
   }
 
   .contact-container {
     display: grid;
     grid-template-columns: 1.2fr 1.8fr;
-    gap: 4rem;
-    padding: 4rem;
+    gap: 3.5rem;
+    padding: 3.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
   .contact-info-panel {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.2rem;
   }
 
   .contact-text {
     font-size: 0.95rem;
-    line-height: 1.6;
+    line-height: 1.7;
   }
 
   .contact-details {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
   }
 
   .detail-item {
     display: flex;
-    gap: 1.25rem;
+    gap: 1rem;
     align-items: center;
   }
 
   .detail-item .icon {
-    font-size: 1.5rem;
-    width: 48px;
-    height: 48px;
-    background-color: hsla(240, 10%, 15%, 0.6);
+    font-size: 1.4rem;
+    width: 44px;
+    height: 44px;
+    background-color: hsla(240, 10%, 15%, 0.03);
     border: 1px solid var(--border-light);
-    border-radius: 8px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   .detail-item h4 {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 700;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.15rem;
   }
 
   .detail-item p {
@@ -644,29 +642,28 @@ const openPositions = [
   .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.2rem;
   }
 
   .form-group {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
 
   .form-group label {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Fredoka', sans-serif;
     font-size: 0.85rem;
-    font-weight: 700;
+    font-weight: 600;
     color: hsl(var(--text-secondary));
-    letter-spacing: 0.05em;
   }
 
   .form-group input,
   .form-group textarea {
-    padding: 0.9rem 1.25rem;
-    background-color: hsla(240, 12%, 8%, 0.8);
+    padding: 0.8rem 1.1rem;
+    background-color: hsl(var(--bg-cream));
     border: 1px solid var(--border-light);
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     color: hsl(var(--text-primary));
     font-family: inherit;
     font-size: 0.95rem;
@@ -676,8 +673,8 @@ const openPositions = [
   .form-group input:focus,
   .form-group textarea:focus {
     outline: none;
-    border-color: hsl(var(--neon-cyan));
-    box-shadow: var(--shadow-neon-cyan);
+    border-color: hsl(var(--accent-pink));
+    box-shadow: 0 0 10px hsla(var(--accent-pink), 0.15);
   }
 
   .form-submit {
@@ -685,16 +682,32 @@ const openPositions = [
   }
 
   @media (max-width: 992px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      text-align: center;
+    }
+    
+    .hero-text-panel {
+      align-items: center;
+    }
+    
     .contact-container {
       grid-template-columns: 1fr;
-      padding: 2.5rem;
+      padding: 2rem;
+    }
+    
+    .about-card {
+      grid-template-columns: 1fr;
+      padding: 2.2rem;
+      gap: 2.5rem;
     }
   }
 
-  /* Scroll Reveal Anim Setup */
+  /* Scroll Reveal Setup */
   .reveal-section {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   }
 
@@ -710,15 +723,15 @@ const openPositions = [
   
   const observerOptions = {
     root: null,
-    threshold: 0.15,
-    rootMargin: "0px 0px -50px 0px"
+    threshold: 0.12,
+    rootMargin: "0px 0px -40px 0px"
   };
 
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        obs.unobserve(entry.target); // Trigger only once
+        obs.unobserve(entry.target);
       }
     });
   }, observerOptions);
@@ -731,7 +744,7 @@ const openPositions = [
   const contactForm = document.getElementById('contactForm');
   contactForm?.addEventListener('submit', (e) => {
     e.preventDefault();
-    alert('감사합니다! 문의가 성공적으로 접수되었습니다. 빠르게 회신해 드리겠습니다.');
+    alert('문의가 성공적으로 전달되었습니다! 따뜻한 관심 감사드립니다.');
     (contactForm as HTMLFormElement).reset();
   });
 </script>

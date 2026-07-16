@@ -1,21 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
   <defs>
-    <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00ffff" />
-      <stop offset="100%" stop-color="#b545ff" />
+    <linearGradient id="gem-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B9B" />
+      <stop offset="50%" stop-color="#FF8E53" />
+      <stop offset="100%" stop-color="#4ECAFF" />
     </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#FF6B9B" flood-opacity="0.25"/>
     </filter>
   </defs>
-  <!-- Hexagon border -->
-  <polygon points="50,8 88,30 88,70 50,92 12,70 12,30" stroke="url(#logo-grad)" stroke-width="4" stroke-linejoin="round" fill="rgba(12, 13, 18, 0.6)" filter="url(#glow)"/>
-  <!-- Abstract 'L' and 'F' combination in center representing LOEF -->
-  <path d="M38,30 L38,70 L62,70" stroke="url(#logo-grad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M38,30 L58,30" stroke="url(#logo-grad)" stroke-width="6" stroke-linecap="round"/>
-  <path d="M38,48 L54,48" stroke="url(#logo-grad)" stroke-width="6" stroke-linecap="round"/>
+  <!-- Diamond Shape with pixel art style grid/shading inside -->
+  <polygon points="50,15 80,45 50,85 20,45" fill="url(#gem-grad)" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round" filter="url(#soft-shadow)"/>
+  <!-- Shiny reflection lines inside -->
+  <polyline points="50,15 50,85" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.4"/>
+  <polyline points="20,45 80,45" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.4"/>
+  <polygon points="50,30 65,45 50,65 35,45" fill="#FFFFFF" fill-opacity="0.4"/>
+  <!-- Tiny sparkle stars -->
+  <path d="M72,20 L75,24 L79,25 L75,26 L72,30 L71,26 L67,25 L71,24 Z" fill="#FFFFFF"/>
+  <path d="M24,65 L26,67 L28,68 L26,69 L24,71 L23,69 L21,68 L23,67 Z" fill="#FFFFFF"/>
 </svg>
