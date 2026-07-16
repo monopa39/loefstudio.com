@@ -1,0 +1,236 @@
+---
+// Header.astro - Global Navigation Bar
+---
+
+<header class="main-header glass">
+  <div class="header-container">
+    <a href="/" class="logo">
+      <!-- Embed the SVG Logo inline for animations and styling flexibility -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="logo-icon">
+        <defs>
+          <linearGradient id="header-logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#00ffff" />
+            <stop offset="100%" stop-color="#b545ff" />
+          </linearGradient>
+        </defs>
+        <polygon points="50,8 88,30 88,70 50,92 12,70 12,30" stroke="url(#header-logo-grad)" stroke-width="4" stroke-linejoin="round" fill="none"/>
+        <path d="M38,30 L38,70 L62,70" stroke="url(#header-logo-grad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M38,30 L58,30" stroke="url(#header-logo-grad)" stroke-width="6" stroke-linecap="round"/>
+        <path d="M38,48 L54,48" stroke="url(#header-logo-grad)" stroke-width="6" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-text">LOEF<span class="text-gradient">STUDIO</span></span>
+    </a>
+
+    <nav class="nav-menu" id="navMenu">
+      <a href="#hero" class="nav-link">Home</a>
+      <a href="#games" class="nav-link">Games</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#careers" class="nav-link">Careers</a>
+      <a href="#contact" class="btn-primary btn-sm">Contact Us</a>
+    </nav>
+
+    <button class="mobile-toggle" aria-label="Toggle navigation menu" id="mobileToggle">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-radius: 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid var(--border-light);
+    transition: var(--transition-normal);
+  }
+
+  /* Shrinking header effect via class added by JS */
+  .main-header.scrolled {
+    padding: 0.5rem 0;
+    background: hsla(var(--bg-dark), 0.9);
+    border-bottom: 1px solid var(--border-neon);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: var(--transition-normal);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: hsl(var(--text-primary));
+  }
+
+  .logo-icon {
+    width: 36px;
+    height: 36px;
+    transition: var(--transition-normal);
+  }
+
+  .logo:hover .logo-icon {
+    transform: rotate(6deg) scale(1.1);
+    filter: drop-shadow(var(--shadow-neon-cyan));
+  }
+
+  .logo-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .nav-link {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: hsl(var(--text-secondary));
+    letter-spacing: 0.03em;
+    transition: var(--transition-fast);
+    position: relative;
+    padding: 0.25rem 0;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-neon);
+    transition: var(--transition-fast);
+  }
+
+  .nav-link:hover {
+    color: hsl(var(--text-primary));
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  /* Custom small button for header */
+  .btn-sm {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.85rem;
+  }
+
+  /* Mobile Hamburguer Toggle */
+  .mobile-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .mobile-toggle .bar {
+    width: 100%;
+    height: 2px;
+    background-color: hsl(var(--text-primary));
+    transition: var(--transition-fast);
+    border-radius: 2px;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .header-container {
+      padding: 1rem 1.25rem;
+    }
+
+    .mobile-toggle {
+      display: flex;
+    }
+
+    .nav-menu {
+      position: fixed;
+      top: -100vh;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: hsla(var(--bg-dark), 0.98);
+      backdrop-filter: blur(var(--glass-blur));
+      flex-direction: column;
+      justify-content: center;
+      gap: 3rem;
+      transition: top 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      z-index: 999;
+    }
+
+    .nav-menu.active {
+      top: 0;
+    }
+
+    .nav-link {
+      font-size: 1.25rem;
+    }
+
+    /* Transform burger menu to 'X' when active */
+    .mobile-toggle.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .mobile-toggle.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .mobile-toggle.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+</style>
+
+<script>
+  // Add shrinking header on scroll
+  const header = document.querySelector('.main-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header?.classList.add('scrolled');
+    } else {
+      header?.classList.remove('scrolled');
+    }
+  });
+
+  // Mobile menu interaction
+  const mobileToggle = document.getElementById('mobileToggle');
+  const navMenu = document.getElementById('navMenu');
+
+  mobileToggle?.addEventListener('click', () => {
+    mobileToggle.classList.toggle('active');
+    navMenu?.classList.toggle('active');
+  });
+
+  // Close mobile menu when clicking nav link
+  const navLinks = document.querySelectorAll('.nav-link');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileToggle?.classList.remove('active');
+      navMenu?.classList.remove('active');
+    });
+  });
+</script>
