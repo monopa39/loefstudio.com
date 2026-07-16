@@ -1,5 +1,5 @@
 ---
-// Footer.astro - Global Footer Component (Cozy Redesign)
+// Footer.astro - Global Footer Component (English Redesign)
 const currentYear = new Date().getFullYear();
 ---
 
@@ -25,7 +25,7 @@ const currentYear = new Date().getFullYear();
         <span class="logo-text">LOEF<span class="text-gradient">STUDIO</span></span>
       </a>
       <p class="brand-desc">
-        LOEF Studio는 일상에 따뜻한 여유와 즐거움을 선물하는 캐주얼 모바일 게임을 개발하고 있습니다.
+        LOEF Studio develops cozy, warm, and relaxing casual mobile games that bring a splash of joy to your daily life.
       </p>
       <div class="social-links">
         <a href="#" aria-label="Twitter X" class="social-icon">
@@ -46,14 +46,13 @@ const currentYear = new Date().getFullYear();
         <li><a href="#hero">Home</a></li>
         <li><a href="#features">Game Features</a></li>
         <li><a href="#about">About Us</a></li>
-        <li><a href="#careers">Careers</a></li>
       </ul>
     </div>
     
     <div class="footer-contact">
       <h4 class="links-title">Support & Contact</h4>
-      <p class="contact-info">비즈니스 협업: <a href="mailto:contact@loefstudio.com">contact@loefstudio.com</a></p>
-      <p class="contact-info">인재 영입: <a href="mailto:recruit@loefstudio.com">recruit@loefstudio.com</a></p>
+      <p class="contact-info">Business Inquiry: <a href="mailto:contact@loefstudio.com">contact@loefstudio.com</a></p>
+      <p class="contact-info">General Support: <a href="mailto:support@loefstudio.com">support@loefstudio.com</a></p>
       <div class="cf-pages-badge">
         <span class="dot"></span> Powered by Cloudflare Pages
       </div>
@@ -91,7 +90,7 @@ const currentYear = new Date().getFullYear();
   .footer-brand {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1.2;
   }
 
   .logo {
@@ -119,12 +118,13 @@ const currentYear = new Date().getFullYear();
     line-height: 1.6;
     color: hsl(var(--text-secondary));
     max-width: 320px;
+    margin-top: 0.5rem;
   }
 
   .social-links {
     display: flex;
     gap: 0.75rem;
-    margin-top: 0.25rem;
+    margin-top: 0.75rem;
   }
 
   .social-icon {

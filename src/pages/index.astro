@@ -2,24 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-
-// Careers data - Casual/Healing Studio Style
-const openPositions = [
-  {
-    title: "iOS Game Developer (Unity / Swift)",
-    department: "Client Dev Team",
-    type: "Full-Time",
-    experience: "신입 ~ 경력 5년 이하",
-    techs: ["Unity", "C#", "Swift", "iOS Optimization"]
-  },
-  {
-    title: "2D Pixel / UI Designer",
-    department: "Art Team",
-    type: "Full-Time",
-    experience: "신입 / 경력 무관",
-    techs: ["Pixel Art", "Figma / Photoshop", "Casual Game UI"]
-  }
-];
 ---
 
 <Layout>
@@ -31,14 +13,14 @@ const openPositions = [
     <div class="container hero-grid fade-in">
       <div class="hero-text-panel">
         <span class="hero-badge">Sparkling Puzzle Game</span>
-        <h1 class="hero-title">다이아몬드<br><span class="text-gradient">닷 아트</span></h1>
+        <h1 class="hero-title">Diamond<br><span class="text-gradient">Dot Art</span></h1>
         <p class="hero-desc">
-          일상에 소박한 반짝임과 편안한 휴식을 더해보세요. 콕콕 터치하며 완성해 나가는 나만의 보석 픽셀 아트! 귀여운 동물 도안부터 반짝이는 힐링 보석 공예를 이제 아이폰에서 곧 만나실 수 있습니다.
+          Bring a splash of sparkle and cozy relaxation to your daily life. Complete your own shiny gem paintings bead by bead! Charming pixel templates, ASMR sounds, and comfortable touch gameplay are coming soon to your iPhone.
         </p>
         
         <div class="hero-actions">
           <div class="coming-soon-badge">
-            <span class="pulse-dot"></span> Coming Soon on App Store
+            <span class="pulse-dot"></span> Coming Soon on the App Store
           </div>
         </div>
       </div>
@@ -57,27 +39,27 @@ const openPositions = [
     <div class="container">
       <div class="section-header">
         <span class="subtitle">GAME FEATURES</span>
-        <h2 class="section-title">반짝이는 힐링의 <span class="text-gradient">순간들</span></h2>
+        <h2 class="section-title">Sparkling Moments of <span class="text-gradient">Relaxation</span></h2>
         <div class="section-line"></div>
       </div>
       
       <div class="features-grid">
         <div class="cozy-card feature-card">
           <div class="feature-icon pink">💎</div>
-          <h3>화사한 다이아몬드 비즈</h3>
-          <p>빛을 받으면 다채롭게 반짝이는 크리스탈 보석 비즈 공예의 감성을 폰 화면 그대로 담았습니다.</p>
+          <h3>Vibrant Diamond Beads</h3>
+          <p>We bring the physical beauty of sparkling crystal gems straight to your screen with a simple and satisfying tap.</p>
         </div>
         
         <div class="cozy-card feature-card">
           <div class="feature-icon blue">🎧</div>
-          <h3>마음을 차분하게 만드는 ASMR</h3>
-          <p>보석 비즈를 한 땀 한 땀 놓을 때 들려오는 감미로운 효과음과 섬세한 진동 피드백이 하루의 스트레스를 지워줍니다.</p>
+          <h3>Calming ASMR Sound</h3>
+          <p>Gentle tap sounds and delicate haptic feedback wash away your daily stress as you craft your masterpiece bead by bead.</p>
         </div>
         
         <div class="cozy-card feature-card">
           <div class="feature-icon yellow">🎨</div>
-          <h3>귀엽고 다양한 무료 도안</h3>
-          <p>말랑한 강아지, 귀여운 아기 고양이 픽셀 아트부터 정교하고 아름다운 일러스트까지 무제한 도안이 준비되어 있습니다.</p>
+          <h3>Cute & Cozy Templates</h3>
+          <p>Unlimited free templates, ranging from adorable kittens and puppies to beautiful, relaxing landscape designs.</p>
         </div>
       </div>
     </div>
@@ -89,12 +71,12 @@ const openPositions = [
       <div class="about-card glass">
         <div class="about-content">
           <span class="subtitle">ABOUT THE STUDIO</span>
-          <h2 class="section-title">작은 반짝임이 주는 <span class="text-gradient">행복</span></h2>
+          <h2 class="section-title">Tiny Sparkles, <span class="text-gradient">Great Happiness</span></h2>
           <p class="about-desc">
-            LOEF Studio는 지친 현대인들의 일상에 작은 쉼표와 따뜻한 여유를 선사하는 캐주얼 모바일 퍼즐 게임을 제작하고 있습니다. 
+            LOEF Studio develops cozy, warm, and relaxing casual mobile puzzle games for players around the world. 
           </p>
           <p class="about-desc">
-            우리는 복잡한 경쟁이나 스트레스를 주는 요소들을 과감히 배제합니다. 잠들기 전 침대 위에서, 혹은 짧은 휴식 시간 동안 온전히 나만의 페이스로 편안하게 즐기며 힐링할 수 있는 따뜻한 웰메이드 게임을 지향합니다.
+            We exclude stressful, competitive features. Instead, we aim to create warm, well-made games that you can comfortably play at the end of a long day, lying in bed with the lights down.
           </p>
         </div>
         <div class="about-brand-visual">
@@ -118,66 +100,27 @@ const openPositions = [
     </div>
   </section>
 
-  <!-- Careers Section -->
-  <section id="careers" class="careers-section reveal-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="subtitle">WE ARE HIRING</span>
-        <h2 class="section-title">함께 행복을 만들 <span class="text-gradient">가족을 모십니다</span></h2>
-        <div class="section-line"></div>
-        <p class="section-desc">
-          자유롭고 유연한 환경 속에서, 전 세계 유저들에게 작은 위로를 건넬 아기자기한 모바일 퍼즐 게임을 함께 만들어갈 멤버를 환영합니다.
-        </p>
-      </div>
-
-      <div class="positions-list">
-        {openPositions.map(pos => (
-          <div class="cozy-card position-item">
-            <div class="position-header">
-              <div class="position-title-group">
-                <span class="position-dept">{pos.department}</span>
-                <h3 class="position-title">{pos.title}</h3>
-              </div>
-              <div class="position-meta">
-                <span class="pos-badge">{pos.type}</span>
-                <span class="pos-badge">{pos.experience}</span>
-              </div>
-            </div>
-            <div class="position-body">
-              <div class="tech-tags">
-                {pos.techs.map(tech => (
-                  <span class="tech-tag">{tech}</span>
-                ))}
-              </div>
-              <a href="mailto:recruit@loefstudio.com" class="btn-apply btn-secondary">지원하기</a>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <!-- Contact Section -->
   <section id="contact" class="contact-section reveal-section">
     <div class="container contact-container cozy-card">
       <div class="contact-info-panel">
         <span class="subtitle">GET IN TOUCH</span>
-        <h2 class="section-title">따뜻한 소통을 <span class="text-gradient">기다립니다</span></h2>
+        <h2 class="section-title">Let's <span class="text-gradient">Connect</span></h2>
         <p class="contact-text">
-          프로젝트 제휴 및 제안, 기타 문의사항이 있으시면 언제든지 편하게 아래 이메일이나 양식을 활용해 남겨주세요.
+          We welcome project inquiries, publisher discussions, and general collaboration. Reach out to us via email or use the form.
         </p>
         <div class="contact-details">
           <div class="detail-item">
             <span class="icon">📧</span>
             <div>
-              <h4>대표 메일</h4>
+              <h4>Email Inquiry</h4>
               <p>contact@loefstudio.com</p>
             </div>
           </div>
           <div class="detail-item">
             <span class="icon">📍</span>
             <div>
-              <h4>스튜디오 위치</h4>
+              <h4>Studio Location</h4>
               <p>Seoul, Republic of Korea</p>
             </div>
           </div>
@@ -186,18 +129,18 @@ const openPositions = [
       
       <form class="contact-form" id="contactForm">
         <div class="form-group">
-          <label for="name">성함 / 제휴사명</label>
-          <input type="text" id="name" required placeholder="성함 혹은 사명을 입력해 주세요." />
+          <label for="name">Name / Company</label>
+          <input type="text" id="name" required placeholder="Enter your name or company." />
         </div>
         <div class="form-group">
-          <label for="email">이메일 주소</label>
-          <input type="email" id="email" required placeholder="답변을 받아보실 이메일 주소입니다." />
+          <label for="email">Email Address</label>
+          <input type="email" id="email" required placeholder="Enter your email address." />
         </div>
         <div class="form-group">
-          <label for="message">문의 사항</label>
-          <textarea id="message" rows="5" required placeholder="상세한 내용을 입력해주시면 빠르게 검토 후 회신 드리겠습니다."></textarea>
+          <label for="message">Message</label>
+          <textarea id="message" rows="5" required placeholder="How can we help you? Feel free to write details here."></textarea>
         </div>
-        <button type="submit" class="btn-primary form-submit">문의 메일 발송하기</button>
+        <button type="submit" class="btn-primary form-submit">Send Message</button>
       </form>
     </div>
   </section>
@@ -488,95 +431,6 @@ const openPositions = [
     color: hsl(var(--text-primary));
   }
 
-  /* Careers Section */
-  .careers-section {
-    padding: 6rem 0;
-  }
-
-  .positions-list {
-    max-width: 750px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .position-item {
-    padding: 2rem;
-  }
-
-  .position-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 1.2rem;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .position-dept {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: hsl(var(--accent-pink));
-    display: block;
-    margin-bottom: 0.2rem;
-    font-family: 'Fredoka', sans-serif;
-  }
-
-  .position-title {
-    font-size: 1.3rem;
-  }
-
-  .position-meta {
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  .pos-badge {
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 0.25rem 0.65rem;
-    border-radius: 20px;
-    background-color: hsla(240, 10%, 15%, 0.04);
-    border: 1px solid var(--border-light);
-    color: hsl(var(--text-secondary));
-  }
-
-  .position-body {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid var(--border-light);
-    padding-top: 1.2rem;
-    flex-wrap: wrap;
-    gap: 1.2rem;
-  }
-
-  .tech-tags {
-    display: flex;
-    gap: 0.4rem;
-    flex-wrap: wrap;
-  }
-
-  .tech-tag {
-    font-size: 0.75rem;
-    padding: 0.2rem 0.6rem;
-    background: hsla(200, 95%, 65%, 0.08);
-    border: 1px solid rgba(94, 199, 255, 0.2);
-    color: hsl(var(--accent-blue));
-    border-radius: 4px;
-    font-weight: 600;
-  }
-
-  .btn-apply {
-    padding: 0.5rem 1.6rem;
-    font-size: 0.9rem;
-    border-radius: 30px;
-    font-weight: 600;
-    text-decoration: none;
-    box-shadow: none;
-  }
-
   /* Contact Section */
   .contact-section {
     padding: 6rem 0;
@@ -744,7 +598,7 @@ const openPositions = [
   const contactForm = document.getElementById('contactForm');
   contactForm?.addEventListener('submit', (e) => {
     e.preventDefault();
-    alert('문의가 성공적으로 전달되었습니다! 따뜻한 관심 감사드립니다.');
+    alert('Thank you! Your message has been sent successfully. We will get back to you shortly.');
     (contactForm as HTMLFormElement).reset();
   });
 </script>
