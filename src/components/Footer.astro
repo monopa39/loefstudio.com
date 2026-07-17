@@ -1,6 +1,10 @@
 ---
 // Footer.astro - Global Footer Component (English Redesign)
 const currentYear = new Date().getFullYear();
+
+// Section anchors live on the home page, so prefix them with "/" on other pages.
+const isHome = Astro.url.pathname === '/';
+const anchor = (id: string) => (isHome ? `#${id}` : `/#${id}`);
 ---
 
 <footer class="main-footer">
@@ -43,9 +47,10 @@ const currentYear = new Date().getFullYear();
     <div class="footer-links">
       <h4 class="links-title">Quick Links</h4>
       <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#features">Game Features</a></li>
-        <li><a href="#about">About Us</a></li>
+        <li><a href={anchor('hero')}>Home</a></li>
+        <li><a href={anchor('features')}>Game Features</a></li>
+        <li><a href={anchor('about')}>About Us</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
       </ul>
     </div>
     
@@ -63,7 +68,7 @@ const currentYear = new Date().getFullYear();
     <div class="container bottom-content">
       <p>&copy; {currentYear} LOEF Studio. All rights reserved.</p>
       <div class="bottom-links">
-        <a href="#">Privacy Policy</a>
+        <a href="/privacy">Privacy Policy</a>
         <a href="#">Terms of Service</a>
       </div>
     </div>

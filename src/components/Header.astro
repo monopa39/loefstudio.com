@@ -1,5 +1,9 @@
 ---
 // Header.astro - Global Navigation Bar (English Redesign)
+
+// Section anchors live on the home page, so prefix them with "/" on other pages.
+const isHome = Astro.url.pathname === '/';
+const anchor = (id: string) => (isHome ? `#${id}` : `/#${id}`);
 ---
 
 <header class="main-header glass">
@@ -24,10 +28,10 @@
     </a>
 
     <nav class="nav-menu" id="navMenu">
-      <a href="#hero" class="nav-link">Home</a>
-      <a href="#features" class="nav-link">Features</a>
-      <a href="#about" class="nav-link">About</a>
-      <a href="#contact" class="btn-primary btn-sm">Contact Us</a>
+      <a href={anchor('hero')} class="nav-link">Home</a>
+      <a href={anchor('features')} class="nav-link">Features</a>
+      <a href={anchor('about')} class="nav-link">About</a>
+      <a href={anchor('contact')} class="btn-primary btn-sm">Contact Us</a>
     </nav>
 
     <button class="mobile-toggle" aria-label="Toggle navigation menu" id="mobileToggle">

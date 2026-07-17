@@ -1,8 +1,8 @@
 {
 	"$schema": "./node_modules/wrangler/config-schema.json",
 	"compatibility_date": "2026-07-16",
-	"compatibility_flags": ["global_fetch_strictly_public"],
-	"name": "loefstudio-com",
+	"compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+	"name": "loefstudio",
 	"main": "@astrojs/cloudflare/entrypoints/server",
 	"assets": {
 		"directory": "./dist",
